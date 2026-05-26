@@ -50,6 +50,113 @@
             background: #cbd5e1;
             border-radius: 10px;
         }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #0b0f19 !important;
+                color: #f1f5f9 !important;
+            }
+
+            /* Container e Cards da aplicação */
+            .bg-white {
+                background-color: #111827 !important;
+                border-color: #1f2937 !important;
+                color: #f1f5f9 !important;
+            }
+
+            .bg-slate-50 {
+                background-color: #1e293b !important;
+                color: #f1f5f9 !important;
+            }
+
+            /* Ajustes de bordas globais */
+            .border-slate-100, .border-slate-200, .border-slate-50 {
+                border-color: #374151 !important;
+            }
+
+            /* Sobrescrita de cores de textos */
+            .text-slate-900, .text-slate-800, .text-slate-700, .text-slate-600 {
+                color: #f1f5f9 !important;
+            }
+            .text-slate-500, .text-slate-400 {
+                color: #9ca3af !important;
+            }
+
+            /* Caixas de Texto, inputs e seletores */
+            input, textarea, select {
+                background-color: #1f2937 !important;
+                border-color: #374151 !important;
+                color: #f9fafb !important;
+            }
+            input::placeholder, textarea::placeholder {
+                color: #6b7280 !important;
+            }
+
+            /* Cabeçalhos de tabelas e listas secundárias */
+            .bg-slate-50, .bg-blue-50, .bg-blue-50\/50 {
+                background-color: #1f2937 !important;
+                color: #e5e7eb !important;
+            }
+            tr {
+                border-color: #374151 !important;
+            }
+
+            /* Destacamento de linhas selecionadas (como eu no Ranking) */
+            .bg-indigo-50 {
+                background-color: rgba(79, 70, 229, 0.15) !important;
+                color: #c7d2fe !important;
+            }
+
+            /* Caixas de avisos e mensagens no Aluno */
+            .bg-indigo-50, .bg-indigo-100 {
+                background-color: rgba(79, 70, 229, 0.1) !important;
+                border-color: rgba(79, 70, 229, 0.25) !important;
+            }
+            .text-indigo-600, .text-indigo-700 {
+                color: #818cf8 !important;
+            }
+
+            /* Barra de navegação inferior */
+            nav {
+                background-color: #111827 !important;
+                border-color: #1f2937 !important;
+            }
+
+            /* Cards de Login e Modais flutuantes */
+            .bg-white.rounded-3xl, .bg-white.rounded-\[2\.5rem\] {
+                background-color: #111827 !important;
+                border-color: #1f2937 !important;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+            }
+
+            /* Alertas de Risco para Professor */
+            .bg-red-50 {
+                background-color: rgba(239, 68, 68, 0.1) !important;
+                border-color: rgba(239, 68, 68, 0.3) !important;
+            }
+            .text-red-800, .text-red-600 {
+                color: #fca5a5 !important;
+            }
+
+            /* Badges verdes para validação */
+            .bg-green-50, .bg-green-100 {
+                background-color: rgba(16, 185, 129, 0.1) !important;
+                color: #34d399 !important;
+            }
+
+            /* Detalhes de botões e links de arquivos */
+            .text-blue-900, .text-blue-950 {
+                color: #93c5fd !important;
+            }
+            .bg-blue-50\/50, .bg-blue-950\/10 {
+                background-color: rgba(30, 58, 138, 0.2) !important;
+                border-color: rgba(30, 58, 138, 0.4) !important;
+            }
+
+            .border-dashed {
+                border-color: rgba(99, 102, 241, 0.4) !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 pb-24 min-h-screen">
@@ -124,7 +231,7 @@
                     </div>
                 </div>
                 <button onclick="handleLogin()" 
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-indigo-100 transition-all active:scale-95">
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-2xl shadow-lg transition-all active:scale-95">
                     Entrar na Plataforma
                 </button>
             </div>
@@ -311,7 +418,7 @@
                 </div>
                 <div class="p-6 bg-slate-50 border-t border-slate-100 flex gap-3">
                     <button onclick="handleValidationAction(false)" class="flex-1 py-3 text-sm font-bold text-red-600 bg-red-50 hover:bg-red-100 rounded-xl active:scale-95 transition-transform">Recusar</button>
-                    <button onclick="handleValidationAction(true)" class="flex-1 py-3 text-sm font-bold text-white bg-green-600 hover:bg-green-700 rounded-xl active:scale-95 transition-transform shadow-lg shadow-green-100">Aprovar</button>
+                    <button onclick="handleValidationAction(true)" class="flex-1 py-3 text-sm font-bold text-white bg-green-600 hover:bg-green-700 rounded-xl active:scale-95 transition-transform shadow-lg">Aprovar</button>
                 </div>
             </div>
         </div>
@@ -454,7 +561,7 @@
                                     <h4 class="font-bold text-sm text-red-800">Roberto Silva</h4>
                                     <p class="text-xs text-red-600">Inativo há 5 dias - Queda de rendimento</p>
                                 </div>
-                                <button onclick="openInterventionModal('Roberto Silva')" class="bg-red-600 text-white text-[10px] px-3 py-2 rounded-lg font-bold shadow-lg shadow-red-200 active:scale-95 transition-transform">Intervir</button>
+                                <button onclick="openInterventionModal('Roberto Silva')" class="bg-red-600 text-white text-[10px] px-3 py-2 rounded-lg font-bold shadow-md active:scale-95 transition-transform">Intervir</button>
                             </div>
                         </div>
                     </section>
@@ -651,7 +758,7 @@
 
     <!-- MODAL DE INTERVENÇÃO (Professor) -->
     <div id="modal-intervention" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
-        <div class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm" onclick="closeInterventionModal()"></div>
+        <div id="modal-overlay" class="absolute inset-0" onclick="closeInterventionModal()"></div>
         <div class="bg-white w-full max-w-sm rounded-3xl shadow-2xl relative z-10 overflow-hidden border border-slate-100 animate-slide-in">
             <div class="p-6">
                 <h3 class="text-lg font-bold text-slate-800 mb-1">Intervenção Pedagógica</h3>
@@ -666,7 +773,7 @@
 
                 <div class="flex gap-3 mt-6">
                     <button onclick="closeInterventionModal()" class="flex-1 py-3 text-sm font-bold text-slate-500 bg-slate-100 rounded-xl">Cancelar</button>
-                    <button onclick="submitIntervention()" class="flex-1 py-3 text-sm font-bold text-white bg-blue-950 rounded-xl shadow-lg shadow-blue-100">Enviar</button>
+                    <button onclick="submitIntervention()" class="flex-1 py-3 text-sm font-bold text-white bg-blue-950 rounded-xl shadow-lg">Enviar</button>
                 </div>
             </div>
         </div>
@@ -1034,7 +1141,7 @@
             const isValid = validatePasswordRequirements(pass);
 
             if (!isValid) {
-                return notify("A senha deve tener no mínimo 8 dígitos, contendo letras e números!", "error");
+                return notify("A senha deve ter no mínimo 8 dígitos, contendo letras e números!", "error");
             }
 
             if (!state.tempSignup) {
@@ -1493,7 +1600,7 @@
                 statusLabel.className = "text-green-600";
                 submitBtn.disabled = false;
             } else {
-                statusLabel.innerText = `Necessita de mais ${minRequired - count} caracteres`;
+                statusLabel.innerText = `Para enviar, digite ao menos ${minRequired - count} caracteres`;
                 statusLabel.className = "text-red-500";
                 submitBtn.disabled = true;
             }
